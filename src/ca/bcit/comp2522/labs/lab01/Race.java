@@ -2,12 +2,12 @@ package ca.bcit.comp2522.labs.lab01;
 
 public class Race {
 
-    public int lenght;
+    public int length;
     public Hare h;
     public Tortoise t;
 
-    public Race(int lenght) {
-        this.lenght = lenght;
+    public Race(int length) {
+        this.length = length;
         t = new Tortoise();
         h = new Hare();
     }
@@ -22,11 +22,30 @@ public class Race {
     }
 
     private String race() {
-//        do {
-//            // code block to be executed
-//        }
-//        while ();
-        return null;
+        int tick = 0;
+        String result ="";
+        do {
+            boolean x = Math.random() > 0.5 ? true: false;
+            tick++;
+            if (x) {
+                t.move();
+                h.move();
+            } else {
+                h.move();
+                t.move();
+            }
+            if (t.getPosition() >= length) {
+                result = t.toString();
+                break;
+            }
+            if (h.getPosition() >= length){
+                result = h.toString();
+                break;
+            }
+
+        }
+        while (1 ==1);
+        return result;
     }
 
 }
