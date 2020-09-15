@@ -5,7 +5,9 @@
 */
 package ca.bcit.comp2522.labs.lab01;
 
-
+/*
+This Class contains a concept of a Tortoise.
+ */
 public class Tortoise {
     /*
     Saves The Position of the tortoise.
@@ -37,8 +39,7 @@ public class Tortoise {
 
     @Override
     public String toString() {
-        return "Tortoise{ position=" + position
-                + '}';
+        return "Tortoise position = " + position + " ";
     }
 
     /* Getter For Tortoise Position.*/
