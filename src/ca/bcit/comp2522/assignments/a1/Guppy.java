@@ -1,6 +1,13 @@
 package ca.bcit.comp2522.assignments.a1;
 
+/*
+This class represents the concept of Guppy
+ */
 public class Guppy {
+
+    /*
+    Constants Used.\
+     */
     final private static int YOUNG_FISH_AGE_IN_YEARS = 10;
     final private static int MATURE_FISH_AGE_IN_YEARS = 30;
     final private static int MAXIMUM_AGE_IN_WEEKS = 50;
@@ -22,6 +29,9 @@ public class Guppy {
 
     private static int numberOfGuppiesBorn = 0;
 
+    /*
+    Creates a Guppy Fish Object.
+     */
     public Guppy() {
         ageInWeeks = 0;
         generationNumber = 0;
@@ -34,21 +44,23 @@ public class Guppy {
         identificationNumber = numberOfGuppiesBorn;
     }
 
+    /*
+    Creates a Guppy Fish Object.
+     */
     public Guppy(String newGenus, String newSpecies, int newAgeInWeeks, boolean newIsFemale, int newGenerationNumber, double newHealthCoefficient) {
 
         this.genus = newGenus.substring(0,1).toUpperCase() + newGenus.substring(1);
         this.species = newSpecies.toLowerCase();
-
         this.ageInWeeks = Math.max(newAgeInWeeks, 0);
         this.isFemale = newIsFemale;
-        if(newGenerationNumber < 0){
+        if (newGenerationNumber < 0){
             this.generationNumber = 1;
         } else {
             this.generationNumber = newGenerationNumber;
         }
-        if(newHealthCoefficient > MAXIMUM_HEALTH_COEFFICIENT){
+        if (newHealthCoefficient > MAXIMUM_HEALTH_COEFFICIENT){
             this.healthCoefficient = MAXIMUM_HEALTH_COEFFICIENT;
-        }else {
+        } else {
             this.healthCoefficient = Math.max(newHealthCoefficient, MINIMUM_HEALTH_COEFFICIENT);
         }
 
@@ -56,7 +68,9 @@ public class Guppy {
         identificationNumber = numberOfGuppiesBorn;
     }
 
-
+    /*
+    Increses the age of Guppy Fish.
+     */
     public void incrementAge() {
         ageInWeeks++;
         if(ageInWeeks > MAXIMUM_AGE_IN_WEEKS){
@@ -101,7 +115,6 @@ public class Guppy {
         if(ageInWeeks > 0 && ageInWeeks < MAXIMUM_AGE_IN_WEEKS){
             this.ageInWeeks = ageInWeeks;
         }
-
     }
 
     public void setAlive(boolean alive) {
@@ -112,24 +125,30 @@ public class Guppy {
         if (!(healthCoefficient < 0) && !(healthCoefficient > MAXIMUM_HEALTH_COEFFICIENT)) {
             this.healthCoefficient = healthCoefficient;
         }
-
     }
 
     public static int getNumberOfGuppiesBorn() {
         return numberOfGuppiesBorn;
     }
 
+    /*
+    It returns the Volume o Water needed by Guppy Fish.
+     */
     public double getVolumeNeeded() {
         if (this.ageInWeeks < 10) {
             return MINIMUM_WATER_VOLUME_ML;
         } else if (this.ageInWeeks > 9 && this.ageInWeeks < 31) {
             return MINIMUM_WATER_VOLUME_ML*ageInWeeks/YOUNG_FISH_AGE_IN_YEARS;
-        } else if(this.ageInWeeks > 30 && this.ageInWeeks < 51 ){
+        } else if (this.ageInWeeks > 30 && this.ageInWeeks < 51 ){
             return  MINIMUM_WATER_VOLUME_ML*1.5;
-        } else{
+        } else {
             return 0.0;
         }
     }
+
+    /*
+    Changes the Health Coefficient of Guppy Fish.
+     */
     public void changeHealthCoefficient (double delta) {
         this.healthCoefficient += delta;
         if(this.healthCoefficient < MINIMUM_HEALTH_COEFFICIENT){
@@ -156,7 +175,9 @@ public class Guppy {
                 '}';
     }
 
-    @Override
+    /*
+    Checks if 2 Guppy Fishes are equal.
+     */
     public boolean equals(Object obj) {
         return super.equals(obj);
     }
