@@ -8,9 +8,12 @@ public final class Main {
         // write your code here
         /*
         Answers:
-        1.
-        2.
-        3.
+        1.To keep the Speakable.java abstract and hidden from Users.
+        2. The Robot class makes it easier to add new types of Robots
+           as they all are going to have Some kind of common functionality or Datatype.
+           And it encourages Polymorphism and Inheritance.
+        3. Because all the classes have a different variation of all the
+           super methods.
          */
         // no animals were hurt during testing
         Cat c1 = new Cat();
