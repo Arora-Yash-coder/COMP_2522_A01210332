@@ -1,9 +1,6 @@
 package ca.bcit.comp2522.assignments.a2;
 
-import com.sun.source.tree.WhileLoopTree;
-
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.Random;
 
@@ -12,12 +9,13 @@ class Pool {
     public static final double DEFAULT_POOL_TEMP_CELSIUS = 40.0;
     public static final double MINIMUM_POOL_TEMP_CELSIUS = 0.0;
     public static final double MAXIMUM_POOL_TEMP_CELSIUS = 100.0;
-    public static final double DEFAULT_PH = 7.0;
+    public static final double NEUTRAL_PH = 7.0;
     public static final double MINIMUM_PH = 0.0;
     public static final double MAXIMUM_PH = 14.0;
     public static final double DEFAULT_NUTRIENT_COEFFICIENT = 0.5;
     public static final double MINIMUM_NUTRIENT_COEFFICIENT = 0.0;
     public static final double MAXIMUM_NUTRIENT_COEFFICIENT = 1.0;
+
     private String name;
     private double volumeLitres;
     private double temperatureCelsius;
@@ -26,6 +24,7 @@ class Pool {
     private ArrayList <Guppy> guppiesInPool;
     private Random randomNumberGenerator;
     private int identificationNumber;
+
     private static int numberOfPools = 0;
     /**
      * Zero-parameter constructor for objects of class Pool initializes
@@ -35,7 +34,7 @@ class Pool {
         name = DEFAULT_POOL_NAME;
         volumeLitres = 0.0;
         temperatureCelsius = DEFAULT_POOL_TEMP_CELSIUS;
-        pH = DEFAULT_PH;
+        pH = NEUTRAL_PH;
         nutrientCoefficient = DEFAULT_NUTRIENT_COEFFICIENT;
         guppiesInPool = new ArrayList < > ();
         randomNumberGenerator = new Random();
@@ -69,6 +68,7 @@ class Pool {
                 double pH,
                 double nutrientCoefficient) {
         setName(name);
+
         setVolume(volumeLitres);
         setTemperature(temperatureCelsius);
         if (temperatureCelsius < MINIMUM_POOL_TEMP_CELSIUS || temperatureCelsius > MAXIMUM_POOL_TEMP_CELSIUS) {
@@ -77,7 +77,7 @@ class Pool {
             setTemperature(temperatureCelsius);
         }
         if (pH < MINIMUM_PH || pH > MAXIMUM_PH) {
-            setPH(DEFAULT_PH);
+            setPH(NEUTRAL_PH);
         } else {
             setPH(pH);
         }
@@ -86,8 +86,9 @@ class Pool {
         } else {
             setNutrientCoefficient(nutrientCoefficient);
         }
-        identificationNumber = ++numberOfPools;
-        guppiesInPool = new ArrayList < > ();
+        numberOfPools++;
+        identificationNumber = numberOfPools;
+        guppiesInPool = new ArrayList <Guppy> ();
         randomNumberGenerator = new Random();
     }
     /**
@@ -388,8 +389,16 @@ class Pool {
      * @return medianAge as a double
      */
     public double getMedianAge() {
-        // If you didn't complete me in A2, try completing me in A3!
-        return 0.0;
+        double median = 0.0;
+        double place;
+        Iterator<Guppy> iterator = guppiesInPool.iterator();
+        while (iterator.hasNext()) {
+            Guppy aPoolGuppy = iterator.next();
+            if (aPoolGuppy.getIsAlive()) {
+
+            }
+        }
+        return median;
     }
     /**
      * Returns a description of this Pool.
