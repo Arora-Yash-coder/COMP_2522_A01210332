@@ -12,32 +12,53 @@ public class Point {
      */
     private double y;
 
-    public Point(double x, double y){
+    /**
+     * Default Constructor of the Class.
+     * @param x X coordinate of the point
+     * @param y Y coordinate of the point
+     */
+    public Point(final double x, final double y) {
         this.x = x;
         this.y = y;
     }
 
+    /**
+     * Accessor for X coordinate of the point.
+     * @return X coordinate of the point
+     */
     public double getX() {
         return x;
     }
 
-    public void setX(double x) {
+    /**
+     * Mutator for X coordinate of the point.
+     * @param x New Value of X coordinate of the point.
+     */
+    public void setX(final double x) {
         this.x = x;
     }
 
+    /**
+     * Accessor for Y coordinate of the point.
+     * @return Y coordinate of the point.
+     */
     public double getY() {
         return y;
     }
 
-    public void setY(double y) {
+    /**
+     * Mutator for Y coordinate of the point.
+     * @param y New Value of the Y coordinate.
+     */
+    public void setY(final double y) {
         this.y = y;
     }
 
-    @Override
+    /**
+     * Returns all the details of a point.
+     * @return The Point.
+     */
     public String toString() {
-        return "Point{" +
-                "x=" + x +
-                ", y=" + y +
-                '}';
+        return "Point{" + "x=" + x + ", y=" + y + '}';
     }
 }

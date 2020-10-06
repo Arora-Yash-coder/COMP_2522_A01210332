@@ -1,7 +1,14 @@
 package ca.bcit.comp2522.labs.lab03;
 
+/**
+ * Tests for Lab03.
+ */
 public class Driver {
-    public static void main(String[] args) {
+    /**
+     * Drives the Program.
+     * @param args Takes in all the arguments used to run the program.
+     */
+    public static void main(final String[] args) {
         // NOTE: All coordinates are assumed to form the proper shapes
         // A quadrilateral is a four-sided polygon
         Quadrilateral[] quadrilateral = {
