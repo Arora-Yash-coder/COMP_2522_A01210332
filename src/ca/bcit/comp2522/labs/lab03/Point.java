@@ -56,7 +56,7 @@ public class Point {
 
     /**
      * Returns all the details of a point.
-     * @return The Point.
+     * @return The Point as a String.
      */
     public String toString() {
         return "Point{" + "x=" + x + ", y=" + y + '}';
