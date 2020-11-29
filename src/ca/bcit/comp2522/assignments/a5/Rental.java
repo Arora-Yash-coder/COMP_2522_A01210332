@@ -15,7 +15,7 @@ public class Rental extends RentalItem{
     public Rental() {
 
     }
-    
+
     public Rental(Condition currentCondition, Rental[] items, long rentalID, double rentalPrice, boolean sellable, long serialVersionUID, boolean sold) {
         super(currentCondition, items, rentalID, rentalPrice, sellable, serialVersionUID, sold);
     }
